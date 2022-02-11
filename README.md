@@ -22,7 +22,7 @@ Yukardaki kodda gelen clientlerin kopması durumunda , ip adresi değişmiyor am
 
 
 
-
+## Server.py Dosyası
 ```python
 from email.headerregistry import Address
 import socket
@@ -129,4 +129,17 @@ if __name__ == "__main__":
     ThreadedServer('192.168.1.1', port_num).listen()
 
 ```
+## Client.py Dosyası
+```python
+from logging import shutdown
+from pydoc import cli
+import socket
+import sys
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client.connect(('192.168.1.1', 10001))
+client.send(b'{"cardId": "0C08F763", "command": "QRCODE", "ip": "192.168.1.1"}')
+from_server = client.recv(1024)
 
+
+print(from_server)
+```
