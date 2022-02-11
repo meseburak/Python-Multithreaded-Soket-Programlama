@@ -18,8 +18,7 @@ for x in clients:
                         print("silindi")
                         clients.append([client, client.getpeername()])
 ```
-Yukardaki kodda gelen clientlerin kopması durumunda , ip adresi değişmiyor ama port numarası değiştigi için karşılaştırma yapıyorum sonra eski clienti siliyorum
-
+Yukardaki kodda gelen clientlerin ip ve port numarası kopması durumunda aynı client baglandıgında port numarası değiştiği için eski clientlerle karşılaştırma yapıyorum eğer aynı ip adresiyle bağlanmış fakat port numarası farklıysa diğer ip adresini silip yenisi ekliyorum.
 
 
 ## Server.py Dosyası
